@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Events = () => {
+const Schedule = () => {
 
     return(
         <div className="centerContainer">
-            <h2>Events</h2>
+            <h2>Schedule</h2>
         </div>
     )
 }
 
-export default Events;
+export default Schedule;

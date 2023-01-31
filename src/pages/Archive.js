@@ -1,9 +1,13 @@
 import React from 'react';
 
+import "../styles.css";
+
 const Archive = () => {
 
     return(
-        <h2>Archive</h2>
+        <div className="centerContainer">
+            <h2>Archive</h2>
+        </div>
     )
 }
 
