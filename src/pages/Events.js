@@ -2,8 +2,8 @@ import React from 'react';
 
 const Events = () => {
 
-    return(
-        <div className="centerContainer">
+    return (
+        <div className="contentContainer">
             <h2>Events</h2>
         </div>
     )

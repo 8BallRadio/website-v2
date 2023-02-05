@@ -3,7 +3,7 @@ import React from 'react';
 const Schedule = () => {
 
     return(
-        <div className="centerContainer">
+        <div>
             <h2>Schedule</h2>
         </div>
     )

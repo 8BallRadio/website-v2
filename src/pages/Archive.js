@@ -4,8 +4,8 @@ import "../styles.css";
 
 const Archive = () => {
 
-    return(
-        <div className="centerContainer">
+    return (
+        <div className="contentContainer">
             <h2>Archive</h2>
         </div>
     )

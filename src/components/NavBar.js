@@ -2,10 +2,19 @@ import React from 'react';
 
 import NavLink from './NavLink';
 
+import { useAuth } from '../contexts/Auth';
+
 const NavBar = () => {
+
+    const { user } = useAuth();
+
+    console.log(user);
 
     return(
         <div className="navbar">
+            {user 
+                ? <NavLink to ="/dashboard"> Dashboard </NavLink>
+                : <NavLink to ="/login"> Login </NavLink>}
             <NavLink to="about"> About </ NavLink>
             <NavLink to="archive"> Archive </ NavLink>
             <NavLink to="events"> Events </ NavLink>
