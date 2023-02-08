@@ -9,9 +9,10 @@ import "../../styles.css";
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const otpEmailRef = useRef();
   
     // Get signUp function from the auth context
-    const { user, signIn } = useAuth();
+    const { user, signIn, signInWithOtp } = useAuth();
 
     const history = useNavigate();
 
@@ -23,7 +24,7 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         // Calls `signIn` function from the context
-        const { error } = await signIn({ email, password })
+        const { error } = await signIn({ email, password });
 
         if (error) {
             alert('error signing in')
@@ -31,6 +32,24 @@ const Login = () => {
         } else {
             // Redirect user to Dashboard
             history('/dashboard');
+        }
+    }
+
+    async function handleSubmitOtp(e) {
+        e.preventDefault();
+
+        // Get email input values
+        const otpEmail = otpEmailRef.current.value;
+
+        // Calls `signIn` function from the context
+        const { error } = await signInWithOtp({otpEmail});
+
+        if (error) {
+            alert('error signing in')
+            console.log(error);
+        } else {
+            // Redirect user to Homepage
+            history('/');
         }
     }
   
@@ -54,10 +73,12 @@ const Login = () => {
             <p>
                 Password Recovery [TODO]
             </p>
-            <p>
-                Email form
-                Sign in using magic link [TODO]
-            </p>
+                <form onSubmit={handleSubmitOtp}>
+                    <label htmlFor="input-otp-email">Email</label>
+                    <input id="input-otp-email" type="otp-email" ref={otpEmailRef} />
+
+                    <button type="submit">Send OTP Link</button>
+                </form>
         </div>
     )
 
