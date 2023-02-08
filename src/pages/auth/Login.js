@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/Auth';
+import supabase from '../../config/supabaseClient';
 
 import "../../styles.css";
 
@@ -10,6 +11,8 @@ const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const otpEmailRef = useRef();
+
+    const [sendingOtp, setSendingOtp] = useState(false);
   
     // Get signUp function from the auth context
     const { user, signIn, signInWithOtp } = useAuth();
@@ -35,35 +38,43 @@ const Login = () => {
         }
     }
 
-    async function handleSubmitOtp(e) {
-        e.preventDefault();
+    // Pausing Otp until we figure out how to prevent new users from using it
+    // async function handleSubmitOtp(e) {
+    //     e.preventDefault();
 
-        // Get email input values
-        const otpEmail = otpEmailRef.current.value;
+    //     console.log("Handling submit");
 
-        // Calls `signIn` function from the context
-        const { error } = await signInWithOtp({otpEmail});
+    //     let { data, status } = await supabase.from('profiles');
 
-        if (error) {
-            alert('error signing in')
-            console.log(error);
-        } else {
-            // Redirect user to Homepage
-            history('/');
-        }
-    }
+    //     console.log(data);
+    //     console.log(status);
+
+    //     setSendingOtp(true);
+    //     // Get email input values
+    //     const otpEmail = otpEmailRef.current.value;
+
+    //     // Calls `signIn` function from the context
+    //     const { error } = await signInWithOtp({otpEmail});
+
+    //     if (error) {
+    //         alert('error signing in');
+    //         console.log(error);
+    //     }
+    // }
   
     return (
         <div className="authContainer">
             <h2> Login </h2>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="input-email">Email</label>
+                    <br/>
                     <input id="input-email" type="email" ref={emailRef} />
             
                     <br />
                     <br />
 
                     <label htmlFor="input-password">Password</label>
+                    <br/>
                     <input id="input-password" type="password" ref={passwordRef} />
             
                     <br />
@@ -73,12 +84,16 @@ const Login = () => {
             <p>
                 Password Recovery [TODO]
             </p>
-                <form onSubmit={handleSubmitOtp}>
+            {/* {sendingOtp 
+                ? <p>Sending Magic Link to account if it exists</p>
+                : <form onSubmit={handleSubmitOtp}>
                     <label htmlFor="input-otp-email">Email</label>
+                    <br />
                     <input id="input-otp-email" type="otp-email" ref={otpEmailRef} />
-
+                    <br />
+                    <br />
                     <button type="submit">Send OTP Link</button>
-                </form>
+                    </form>} */}
         </div>
     )
 

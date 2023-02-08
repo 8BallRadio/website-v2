@@ -7,8 +7,6 @@ const ProtectedRoute = ({ children }) => {
 
     const history = useNavigate();
 
-    console.log(user);
-
     useEffect(() => {
         if(!user){ // user is not authenticated
             history("/");

@@ -6,7 +6,7 @@ import { useAuth } from '../../contexts/Auth';
 
 import "../../styles.css";
 
-const SignUp = () => {
+const SetPassword = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
     // const nameRef = useRef()
@@ -30,8 +30,8 @@ const SignUp = () => {
         if (error) {
             alert('error signing in')
             } else {
-            // Redirect user to Dashboard
-            history('/');
+            // Redirect user to Dashboard to update misc info
+            history('/dashboard');
         }
     }
   
@@ -40,9 +40,9 @@ const SignUp = () => {
     return (
       <div className="contentContainer">
         <div className="authContainer">
-            <h2> Sign Up</h2>
+            <h2>Set Your Password</h2>
             <form onSubmit={handleSubmit}>
-            <label htmlFor="input-email">Email: {user.email} </label>
+            <label htmlFor="input-email">Email: {user?.email} </label>
             <p id="input-email" type="email" ref={emailRef} /> <p></p>
 
             <br />
@@ -57,15 +57,11 @@ const SignUp = () => {
             <br />
             <br />
     
-            <button type="submit">Sign up</button>
+            <button type="submit">Set Password</button>
             </form>
-
-            <p>
-                Already have an account? <Link to="/login">Log In</Link>
-            </p>
         </div>
       </div>
     )
 }
 
-export default SignUp;
+export default SetPassword;

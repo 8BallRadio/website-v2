@@ -8,7 +8,7 @@ import Archive from './pages/Archive';
 import Calendar from './pages/Calendar';
 import Events from './pages/Events';
 import Login from './pages/auth/Login';
-import SignUp from './pages/auth/SignUp';
+import SetPassword from './pages/auth/SetPassword';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -25,7 +25,7 @@ const App = () => {
         // redirect to signup and clear intial signup
 
         if(signuplink.includes("type=invite") && user){
-            history("/signup", {replace : true});
+            history("/setpassword", {replace : true});
             setSignuplink("");
         }
     }, [location, user]);
@@ -44,9 +44,9 @@ const App = () => {
                         <ProtectedRoute>
                             <Dashboard />                            
                         </ProtectedRoute>} />
-                    <Route path="/signup" element={
+                    <Route path="/setpassword" element={
                         <ProtectedRoute>
-                            <SignUp />
+                            <SetPassword />
                         </ProtectedRoute>} />
                 </Routes>
             </div>

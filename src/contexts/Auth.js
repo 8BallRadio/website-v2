@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
         })
 
         return () => {
-            listener.unsubscribe;
+            listener?.unsubscribe;
         };
 
     }, [])
@@ -37,6 +37,7 @@ export function AuthProvider({ children }) {
         signIn: (data) => supabase.auth.signInWithPassword(data),
         signOut: () => supabase.auth.signOut(),
         user,
+        session,
     }
 
     return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
