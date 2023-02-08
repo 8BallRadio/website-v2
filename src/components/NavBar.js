@@ -5,10 +5,8 @@ import NavLink from './NavLink';
 import { useAuth } from '../contexts/Auth';
 
 const NavBar = () => {
-
+    
     const { user } = useAuth();
-
-    console.log(user);
 
     return(
         <div className="navbar">

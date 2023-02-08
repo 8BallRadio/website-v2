@@ -32,8 +32,8 @@ export function AuthProvider({ children }) {
 
     // Will be passed down to Signup, Login and Dashboard components
     const value = {
-        signUp: (data) => supabase.auth.signUp(data),
-        signInWithPassword: (data) => supabase.auth.signInWithPassword(data),
+        signUp: (data) => supabase.auth.updateUser(data),
+        signIn: (data) => supabase.auth.signInWithPassword(data),
         signOut: () => supabase.auth.signOut(),
         user,
     }
