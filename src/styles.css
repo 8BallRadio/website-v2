@@ -5,13 +5,13 @@ header {
     justify-content: space-between;
     align-items: center;
     display: flex;
-    gap: 2rem;
     padding: 0 1rem;
     top: 0;
     left: 0;
     position: fixed;
     width: 100%;
     height: 64px;
+    z-index: 1;
 }
 
 header a {
@@ -20,16 +20,20 @@ header a {
 }
 
 .contentContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    margin-top: 64px;
+    height: 100vh;
+}
+
+.mainContentContainer {
+    position: relative;
+    top: 80px;
+    left: 0;
+    padding-bottom: 4rem;
 }
 
 .authContainer {
     display: flex;
+    margin: 50px 100px;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
@@ -37,9 +41,23 @@ header a {
     border: 1px dotted black;
 }
 
+.createContainer {
+    display: flex;
+    margin: 50px 100px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    border: 1px dotted black;
+}
+
+.createContainer div {
+    height: 1;
+}
+
 .container {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -54,8 +72,7 @@ header a {
 }
 
 footer {
-    height: 20%;
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -65,9 +82,16 @@ footer {
     background-color: darkslategrey;
     gap: 2rem;
     padding: 0 1rem;
-    color: white;
+    height: 300px;
 }
 
 footer div {
-    width: 30%;
+    width: 33%;
+    background-color: darkslategray;
+}
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
 }

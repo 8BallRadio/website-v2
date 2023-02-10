@@ -10,6 +10,7 @@ import Events from './pages/Events';
 import Login from './pages/auth/Login';
 import SetPassword from './pages/auth/SetPassword';
 import Dashboard from './pages/Dashboard';
+import CreateShow from './pages/CreateShow';
 import ProtectedRoute from './components/ProtectedRoute';
 
 import { useAuth } from './contexts/Auth';
@@ -26,32 +27,39 @@ const App = () => {
 
         if(signuplink.includes("type=invite") && user){
             history("/setpassword", {replace : true});
+            console.log("test for redirect");
             setSignuplink("");
         }
     }, [location, user]);
 
     return (
-        <div className="container">
+        <>
             <Header />
-            <div className="contentContainer">
-                <Routes>
-                    <Route path="/*" element={<About />} />
-                    <Route path="/calendar" element={<Calendar />} />
-                    <Route path="/events" element={<Events />} />
-                    <Route path="/archive" element={<Archive />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/dashboard" element={
-                        <ProtectedRoute>
-                            <Dashboard />                            
-                        </ProtectedRoute>} />
-                    <Route path="/setpassword" element={
-                        <ProtectedRoute>
-                            <SetPassword />
-                        </ProtectedRoute>} />
-                </Routes>
+            <div className="mainContentContainer">
+                <div className="contentContainer">
+                    <Routes>
+                        <Route path="/*" element={<About />} />
+                        <Route path="/calendar" element={<Calendar />} />
+                        <Route path="/events" element={<Events />} />
+                        <Route path="/archive" element={<Archive />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/dashboard" element={
+                            <ProtectedRoute>
+                                <Dashboard />                            
+                            </ProtectedRoute>} />
+                        <Route path="/setpassword" element={
+                            <ProtectedRoute>
+                                <SetPassword />
+                            </ProtectedRoute>} />
+                        <Route path="/createshow" element={
+                            <ProtectedRoute>
+                                <CreateShow />
+                            </ProtectedRoute>} />
+                    </Routes>
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </>
     )
 }
 

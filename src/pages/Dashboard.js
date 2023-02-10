@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import supabase from '../config/supabaseClient';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/Auth';
 
 const Dashboard = () => {
@@ -12,6 +12,7 @@ const Dashboard = () => {
     const [username, setUsername] = useState(null);
     const [website, setWebsite] = useState(null);
     const [avatar_url, setAvatarURL] = useState(null);
+    const [shows, setShows] = useState([]);
 
     useEffect(() => {
         getProfile();
@@ -26,7 +27,7 @@ const Dashboard = () => {
             }
             let { data, error, status } = await supabase
             .from('profiles')
-            .select(`username, website, avatar_url`)
+            .select(`username, website, avatar_url, shows`)
             .eq('id', user?.id)
             .single();
 
@@ -35,14 +36,15 @@ const Dashboard = () => {
             }
 
             if (data) {
-                setUsername(data.username)
-                setWebsite(data.website)
-                setAvatarURL(data.avatar_url)
+                setUsername(data.username);
+                setWebsite(data.website);
+                setAvatarURL(data.avatar_url);
+                setShows(data.shows);
             }
         } catch (error) {
-            alert(error.message)
+            alert(error.message);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 
@@ -92,7 +94,7 @@ const Dashboard = () => {
     return (
         <div className='authContainer'>
             <p>Welcome {user?.email}!</p>
-            <form onSubmit={updateProfile} className="form-widget">
+            <form onSubmit={updateProfile} className="form-widget" method="post">
                 <div>
                     <label htmlFor="username">Name</label>
                     <input
@@ -111,12 +113,18 @@ const Dashboard = () => {
                     onChange={(e) => setWebsite(e.target.value)}
                     />
                 </div>
+                { shows.length == 0
+                    ? <div> You're currently have 0 shows </div>
+                    : <div> You're currently a part of {shows && shows?.length} shows</div>   }
                 <div>
                     <button className="button primary block" disabled={loading}>
                     Update profile
                     </button>
                 </div>
             </form>
+            <Link to="/createshow">
+                <button>Create a show</button>
+            </Link>
             <button onClick={handleSignOut}>Sign out</button>
         </div>
     )
