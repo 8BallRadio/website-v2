@@ -12,6 +12,8 @@ import SetPassword from './pages/auth/SetPassword';
 import Dashboard from './pages/Dashboard';
 import CreateShow from './pages/CreateShow';
 import ProtectedRoute from './components/ProtectedRoute';
+import Shows from './pages/Shows';
+import ShowDetails from './pages/ShowDetails';
 
 import { useAuth } from './contexts/Auth';
 
@@ -38,20 +40,22 @@ const App = () => {
             <div className="mainContentContainer">
                 <div className="contentContainer">
                     <Routes>
-                        <Route path="/*" element={<About />} />
-                        <Route path="/calendar" element={<Calendar />} />
-                        <Route path="/events" element={<Events />} />
-                        <Route path="/archive" element={<Archive />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/dashboard" element={
+                        <Route path="*" element={<About />} />
+                        <Route path="calendar" element={<Calendar />} />
+                        <Route path="events" element={<Events />} />
+                        <Route path="archive" element={<Archive />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="shows" element={<Shows />} />
+                        <Route path="shows/:showKey" element={<ShowDetails />}/>
+                        <Route path="dashboard" element={
                             <ProtectedRoute>
                                 <Dashboard />                            
                             </ProtectedRoute>} />
-                        <Route path="/setpassword" element={
+                        <Route path="setpassword" element={
                             <ProtectedRoute>
                                 <SetPassword />
                             </ProtectedRoute>} />
-                        <Route path="/createshow" element={
+                        <Route path="createshow" element={
                             <ProtectedRoute>
                                 <CreateShow />
                             </ProtectedRoute>} />

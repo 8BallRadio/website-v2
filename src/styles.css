@@ -71,6 +71,27 @@ header a {
     justify-content: space-evenly;
 }
 
+.showsContainer{
+    margin: 0 auto;
+}
+
+.showsGrid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.showCard {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 6px;
+    position: relative;
+    border-color: black;
+  }
+
 footer {
     position: absolute;
     display: flex;
