@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/Auth';
 
 import "../styles.css";
+import { Autocomplete, TextField } from '@mui/material';
 
 const CreateShow = () => {
     const [toggleAddShow, setToggleAddShow] = useState(false);
@@ -14,34 +15,44 @@ const CreateShow = () => {
     const [userFields, setUserFields] = useState([
         {user: ''}
     ]);
-    const [currentUserDetails, setCurrentUserDetails] = useState(null)
+    const [currentUserDetails, setCurrentUserDetails] = useState(null);
+    const [siteUsers, setSiteUsers] = useState(null);
+    const [formError, setFormError] = useState('');
 
     // Check current user's id to find username 
     const { user } = useAuth();
 
-    useEffect(() => {
-        const fetchUserDetails = async () => {
-            const { data, error } = await supabase
-                .from("profiles")
-                .select()
-                .eq('id', user?.id)
-                .single();
-            
-            if(error){
-                console.log(error);
-            } else {
-                setCurrentUserDetails(data);
-            }
-        }
+    const navigate = useNavigate();
 
-        fetchUserDetails();
+    useEffect(() => {
+        fetchData();
     }, [user]);
+
+    const fetchData = async () => {
+        const { data, error } = await supabase
+            .from("profiles")
+            .select()
+        
+        console.log();
+
+        if(error){
+            console.log(error);
+        } else {
+            setSiteUsers(data.filter(function(el) { return el.id != user.id}));
+            setCurrentUserDetails(data.filter(function(el) { return el.id == user.id}));
+        }
+    }
 
     const callback = () => {
         setToggleAddShow(!toggleAddShow);
     }
 
     const handleCreateShow = async () => {
+        if (!showname || !description){
+            setFormError('Please fill the fields before submitting');
+            return;
+        }
+
         const formattedUsers = formatUserArray();
         const key = formatUserRouteURL(showname);
         const { error } = await supabase
@@ -54,9 +65,9 @@ const CreateShow = () => {
              })
 
         if(error){
-            console.log(error);    
+            setFormError("There was a problem with creating your show.");
         } else {
-
+            navigate("/shows/" + key);
         }
         // Add authenticated user's username to userArray
         // Redirect if successful to the newly created show page, otherwise show an error!
@@ -105,18 +116,23 @@ const CreateShow = () => {
         // Or it could be anything? and then we format the showname accordingly on submission?
     }
 
+    const removeCurrentUser = (data) => {
+        return data.filter(function(el) { return el.id != user})
+    }
+
     return (
-        <div className="createContainer">
+        <div className={`pushFromTop createContainer`}>
             <form onSubmit={handleCreateShow}>
                 <h2>Create a Show</h2>
+                <div>
                 <label htmlFor="showname">Name of show</label>
                 <br />
                 <input 
                     id="showname" 
                     type="text"
                     defaultValue={showname || ""}
-                    onChange={(event) => setShowname(event.target.value)}></input>
-
+                    onChange={(event) => setShowname(event.target.value)}/>
+                </div>
                 <br />
                 <div>
                     Upload show photo
@@ -147,11 +163,17 @@ const CreateShow = () => {
                                 {userFields.map((input, index) => {
                                     return (
                                         <div key={index}>
-                                            <input
+                                            <Autocomplete
                                                 name='user'
                                                 placeholder='User'
+                                                options={siteUsers}
                                                 onChange={event => handleUserFormChange(index, event)}
                                                 value={input.user}
+                                                renderInput={(params) => (
+                                                    <TextField {...params}
+                                                    
+                                                    />
+                                                )}
                                             />
                                             <button onClick={(event) => removeUserField(index, event)}>Remove user</button>
                                         </div>

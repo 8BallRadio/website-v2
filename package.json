@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/8BallRadio/website-v2#readme",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.9",
     "@supabase/supabase-js": "^2.7.0",
     "bootstrap-icons": "^1.10.3",
     "file-loader": "^6.2.0",

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import LiveData from './LiveData';
 
-import pauseSVG from '../assets/pause-fill.svg';
-import playSVG from '../assets/play.svg';
+import pauseSVG from '../../assets/pause-fill.svg';
+import playSVG from '../../assets/play.svg';
 
 
 const Player = ({url}) => {
@@ -33,11 +33,8 @@ const Player = ({url}) => {
   }
 
   return(
-    <div className="audio-player"> {// Check if this is proper camelcase
-      }
-      <button onClick={togglePlayPause}>
-        {isPlaying ? <PauseButton /> : <PlayButton />}
-      </button>
+    <div className="audioPlayer">
+      <LiveData />
       <section>
           <input
           type="range"
@@ -50,7 +47,9 @@ const Player = ({url}) => {
           }}
           />
       </section>
-      <LiveData />
+      <button onClick={togglePlayPause}>
+        {isPlaying ? <PauseButton /> : <PlayButton />}
+      </button>
     </div>
   )
 }

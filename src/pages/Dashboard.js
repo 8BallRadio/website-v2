@@ -92,11 +92,12 @@ const Dashboard = () => {
     // Set shows, 
 
     return (
-        <div className='authContainer'>
-            <p>Welcome {user?.email}!</p>
+        <div className={`pushFromTop authContainer`}>
+            <h2>Welcome {user?.email}!</h2>
             <form onSubmit={updateProfile} className="form-widget" method="post">
                 <div>
                     <label htmlFor="username">Name</label>
+                    <br/>
                     <input
                     id="username"
                     type="text"
@@ -106,6 +107,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                     <label htmlFor="website">Website</label>
+                    <br/>
                     <input
                     id="website"
                     type="url"
@@ -113,7 +115,7 @@ const Dashboard = () => {
                     onChange={(e) => setWebsite(e.target.value)}
                     />
                 </div>
-                { shows.length == 0
+                { shows?.length == 0
                     ? <div> You're currently have 0 shows </div>
                     : <div> You're currently a part of {shows && shows?.length} shows</div>   }
                 <div>
@@ -123,7 +125,9 @@ const Dashboard = () => {
                 </div>
             </form>
             <Link to="/createshow">
-                <button>Create a show</button>
+                <div>
+                    <button>Create a show</button>
+                </div>
             </Link>
             <button onClick={handleSignOut}>Sign out</button>
         </div>

@@ -39,7 +39,7 @@ const SetPassword = () => {
 
     return (
       <div className="contentContainer">
-        <div className="authContainer">
+        <div className={`pushFromTop authContainer`}>
             <h2>Set Your Password</h2>
             <form onSubmit={handleSubmit}>
             <label htmlFor="input-email">Email: {user?.email} </label>

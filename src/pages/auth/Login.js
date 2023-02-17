@@ -63,7 +63,7 @@ const Login = () => {
     // }
   
     return (
-        <div className="authContainer">
+        <div className={`pushFromTop authContainer`}>
             <h2> Login </h2>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="input-email">Email</label>
@@ -77,6 +77,7 @@ const Login = () => {
                     <br/>
                     <input id="input-password" type="password" ref={passwordRef} />
             
+                    <br />
                     <br />
             
                     <button type="submit">Login</button>
@@ -100,3 +101,5 @@ const Login = () => {
 }
 
 export default Login;
+
+// TODO: Add alerts to inform user of wrong info

@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link, BrowserRouter, RouterProvider, redirect, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
-import About from './pages/About';
-import Archive from './pages/Archive';
-import Calendar from './pages/Calendar';
-import Events from './pages/Events';
-import Login from './pages/auth/Login';
-import SetPassword from './pages/auth/SetPassword';
-import Dashboard from './pages/Dashboard';
-import CreateShow from './pages/CreateShow';
-import ProtectedRoute from './components/ProtectedRoute';
-import Shows from './pages/Shows';
-import ShowDetails from './pages/ShowDetails';
+import Router from "./components/Router";
 
 import { useAuth } from './contexts/Auth';
 
@@ -37,32 +27,9 @@ const App = () => {
     return (
         <>
             <Header />
-            <div className="mainContentContainer">
-                <div className="contentContainer">
-                    <Routes>
-                        <Route path="*" element={<About />} />
-                        <Route path="calendar" element={<Calendar />} />
-                        <Route path="events" element={<Events />} />
-                        <Route path="archive" element={<Archive />} />
-                        <Route path="login" element={<Login />} />
-                        <Route path="shows" element={<Shows />} />
-                        <Route path="shows/:showKey" element={<ShowDetails />}/>
-                        <Route path="dashboard" element={
-                            <ProtectedRoute>
-                                <Dashboard />                            
-                            </ProtectedRoute>} />
-                        <Route path="setpassword" element={
-                            <ProtectedRoute>
-                                <SetPassword />
-                            </ProtectedRoute>} />
-                        <Route path="createshow" element={
-                            <ProtectedRoute>
-                                <CreateShow />
-                            </ProtectedRoute>} />
-                    </Routes>
-                </div>
-                <Footer />
-            </div>
+            {/* Main App */}
+            <Router />
+            <Footer />
         </>
     )
 }
