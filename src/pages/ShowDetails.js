@@ -1,95 +1,94 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom'
 
-import supabase from '../config/supabaseClient';
+import supabase from '../config/supabaseClient'
 
-import { useAuth } from '../contexts/Auth';
+import { useAuth } from '../contexts/Auth'
 
-import "../styles.css";
+import '../styles.css'
 
 const ShowDetails = () => {
-    const [show, setShow] = useState(null);
-    const { showKey } = useParams();
-    const history = useNavigate();
+  // const [show, setShow] = useState(null)
+  const { showKey } = useParams()
+  const history = useNavigate()
 
-    // User data
-    const { user } = useAuth();
+  // User data
+  const { user } = useAuth()
 
-    // Show data
-    const [showname, setShowname] = useState('');
-    const [description, setDescription] = useState('');
-    const [owners, setOwners] = useState(null);
-    const [loading, setLoading] = useState(true);
+  // Show data
+  const [showname, setShowname] = useState('')
+  const [description, setDescription] = useState('')
+  const [owners, setOwners] = useState(null)
+  const [/*loading,*/ setLoading] = useState(true)
 
-    useEffect(() => {
-        fetchShowDetails();
-        verifyUser();
-    }, [user])
+  useEffect(() => {
+    fetchShowDetails()
+    verifyUser()
+  }, [user])
 
-    const fetchShowDetails = async () => {
-        const { data, error } = await supabase
-            .from('shows')
-            .select()
-            .eq('key', showKey)
-            .single();
+  const fetchShowDetails = async () => {
+    const { data, error } = await supabase
+      .from('shows')
+      .select()
+      .eq('key', showKey)
+      .single()
 
-        if(error){
-            // Redirect if show does not exist
-            // TODO: Add alert to inform user if show DNE
-            history('/');
-        } else {
-            console.log(data);
+    if (error) {
+      // Redirect if show does not exist
+      // TODO: Add alert to inform user if show DNE
+      history('/')
+    } else {
+      console.log(data)
 
-            setOwners(data.users)
-            setShowname(data.showname);
-            setDescription(data.description);
-        }
+      setOwners(data.users)
+      setShowname(data.showname)
+      setDescription(data.description)
     }
+  }
 
-    const verifyUser = async () => {
-        try {
-            setLoading(true);
+  const verifyUser = async () => {
+    try {
+      setLoading(true)
 
-            if(user==null){
-                return;
-            }
-            let { data, error, status } = await supabase
-            .from('profiles')
-            .select(`username, website, avatar_url, shows`)
-            .eq('id', user?.id)
-            .single();
+      if (user == null) {
+        return
+      }
+      let { data, error, status } = await supabase
+        .from('profiles')
+        .select('username, website, avatar_url, shows')
+        .eq('id', user?.id)
+        .single()
 
-            if (error && status !== 406) {
-                throw Error;
-            }
+      if (error && status !== 406) {
+        throw Error
+      }
 
-            if (data) {
-                setOwners()
-            }
-        } catch (error) {
-            alert(error.message);
-        } finally {
-            setLoading(false);
-        }
+      if (data) {
+        setOwners()
+      }
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      setLoading(false)
     }
+  }
 
-    const handleClick = (event) => {
-        console.log("we out here");
-    }
+  const handleClick = () => {
+    console.log('we out here')
+  }
 
-    return (
-        <div className={`contentContainer pushFromTop`}>
-            <h2>{showname}</h2>
-            <p>{description}</p>
-            { !owners 
-                ? <></>
-                : <button onClick={(event) => handleClick(event)}>
-                    Create a set
-                  </button>
-            }
-        </div>
-    )
+  return (
+    <div className={'contentContainer pushFromTop'}>
+      <h2>{showname}</h2>
+      <p>{description}</p>
+      {!owners ? (
+        <></>
+      ) : (
+        <button onClick={event => handleClick(event)}>Create a set</button>
+      )}
+    </div>
+  )
 }
 
-export default ShowDetails;
+export default ShowDetails

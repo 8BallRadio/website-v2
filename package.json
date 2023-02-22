@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
     "build": "webpack",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "css-loader": "^6.7.3",
     "dotenv-webpack": "^8.0.1",
     "eslint-config-prettier": "8.6.0",
+    "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.1.2",
@@ -51,8 +53,8 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
       "npx eslint --fix",
+      "npx prettier --write"
     ]
   }
 }

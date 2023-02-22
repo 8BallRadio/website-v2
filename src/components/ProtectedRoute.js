@@ -1,19 +1,20 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/Auth";
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/Auth'
 
 const ProtectedRoute = ({ children }) => {
-    const { user } = useAuth();
+  const { user } = useAuth()
 
-    const history = useNavigate();
+  const history = useNavigate()
 
-    useEffect(() => {
-        if(!user){ // user is not authenticated
-            history("/");
-        }
-    }, []);
+  useEffect(() => {
+    if (!user) {
+      // user is not authenticated
+      history('/')
+    }
+  }, [])
 
-    return children;
-};
+  return children
+}
 
-export default ProtectedRoute;
+export default ProtectedRoute

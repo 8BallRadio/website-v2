@@ -1,53 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import supabase from '../config/supabaseClient';
+import supabase from '../config/supabaseClient'
 
-import ShowCard from '../components/ShowCard';
+import ShowCard from '../components/ShowCard'
 
-import "../styles.css";
+import '../styles.css'
 
 const Shows = () => {
-    const [fetchError, setFetchError] = useState(null);
-    const [shows, setShows] = useState(null)
+  const [fetchError, setFetchError] = useState(null)
+  const [shows, setShows] = useState(null)
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const {data, error} = await supabase
-                .from("shows")
-                .select();
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data, error } = await supabase.from('shows').select()
 
-            if (error) {
-                setFetchError('Could not fetch shows');
-                setShows(null);
-                console.log(error);
-            } else {
-                setShows(data);
-                setFetchError(null);
-            }
-        }
+      if (error) {
+        setFetchError('Could not fetch shows')
+        setShows(null)
+        console.log(error)
+      } else {
+        setShows(data)
+        setFetchError(null)
+      }
+    }
 
-        fetchData();
+    fetchData()
+  }, [])
 
-    }, []);
-
-    return (
-        <div className={`contentContainer pushFromTop`}>
-            <h2>Shows </h2>
-            {fetchError && (<p>{fetchError}</p>)}
-            {shows && (
-                <div className="showsContainer">
-                    <div className="showsGrid">
-                        {shows.map(show => (
-                            <ShowCard key={show.id} show={show} />
-                        ))}
-                    </div>
-                </div>
-            )}
+  return (
+    <div className={'contentContainer pushFromTop'}>
+      <h2>Shows </h2>
+      {fetchError && <p>{fetchError}</p>}
+      {shows && (
+        <div className="showsContainer">
+          <div className="showsGrid">
+            {shows.map(show => (
+              <ShowCard key={show.id} show={show} />
+            ))}
+          </div>
         </div>
-    )
+      )}
+    </div>
+  )
 }
 
 // TODO: Import shows and dynamically create divs, Links, and photos
-// 
+//
 
-export default Shows;
+export default Shows
