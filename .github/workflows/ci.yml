@@ -18,7 +18,7 @@ on:
 
 jobs:
   lint:
-    name: Run tests
+    name: Lint
     runs-on: ubuntu-latest
 
     steps:
@@ -29,8 +29,8 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install packages
+      - name: Install
         run: yarn install
 
-      - name: Run eslint
+      - name: Lint
         run: yarn lint

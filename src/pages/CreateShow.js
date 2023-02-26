@@ -37,12 +37,12 @@ const CreateShow = () => {
       setSiteUsers(
         data.filter(function (el) {
           return el.id !== user.id
-        }),
+        })
       )
       setCurrentUserDetails(
         data.filter(function (el) {
           return el.id === user.id
-        }),
+        })
       )
     }
   }
@@ -63,7 +63,7 @@ const CreateShow = () => {
       showname,
       description,
       users: formattedUsers,
-      key,
+      key
     })
 
     if (error) {
@@ -157,35 +157,37 @@ const CreateShow = () => {
           onChange={event => setDescription(event.target.value)}
         />
         <br />
-        {toggleAddShow ? (
-          <div>
-            Click here to disable
-            <input type="checkbox" defaultChecked={toggleAddShow} onClick={callback} />
+        {toggleAddShow
+          ? (
             <div>
-              <button onClick={addUserField}>Add user</button>
-              {userFields.map((input, index) => {
-                return (
-                  <div key={index}>
-                    <Autocomplete
-                      name="user"
-                      placeholder="User"
-                      options={siteUsers}
-                      onChange={event => handleUserFormChange(index, event)}
-                      value={input.user}
-                      renderInput={params => <TextField {...params} />}
-                    />
-                    <button onClick={event => removeUserField(index, event)}>Remove user</button>
-                  </div>
-                )
-              })}
+              Click here to disable
+              <input type="checkbox" defaultChecked={toggleAddShow} onClick={callback} />
+              <div>
+                <button onClick={addUserField}>Add user</button>
+                {userFields.map((input, index) => {
+                  return (
+                    <div key={index}>
+                      <Autocomplete
+                        name="user"
+                        placeholder="User"
+                        options={siteUsers}
+                        onChange={event => handleUserFormChange(index, event)}
+                        value={input.user}
+                        renderInput={params => <TextField {...params} />}
+                      />
+                      <button onClick={event => removeUserField(index, event)}>Remove user</button>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
-          </div>
-        ) : (
-          <div>
-            Click here to add more users!
-            <input type="checkbox" defaultChecked={toggleAddShow} onClick={callback} />
-          </div>
-        )}
+          )
+          : (
+            <div>
+              Click here to add more users!
+              <input type="checkbox" defaultChecked={toggleAddShow} onClick={callback} />
+            </div>
+          )}
       </form>
 
       <button onClick={handleCreateShow}>Create Show</button>
