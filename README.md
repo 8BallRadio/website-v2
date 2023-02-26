@@ -6,11 +6,11 @@ New 8-Ball Radio website using React.
 
 ### Install
 
-> npm install
+> yarn install
 
 ### Run dev server
 
-> npm run dev
+> yarn dev
 
 ---
 
