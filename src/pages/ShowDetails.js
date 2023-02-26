@@ -9,7 +9,7 @@ import { useAuth } from '../contexts/Auth'
 import '../styles.css'
 
 const ShowDetails = () => {
-  const [show, setShow] = useState(null)
+  // const [show, setShow] = useState(null)
   const { showKey } = useParams()
   const history = useNavigate()
 
@@ -20,7 +20,7 @@ const ShowDetails = () => {
   const [showname, setShowname] = useState('')
   const [description, setDescription] = useState('')
   const [owners, setOwners] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [setLoading] = useState(true)
 
   useEffect(() => {
     fetchShowDetails()
@@ -50,9 +50,9 @@ const ShowDetails = () => {
       if (user == null) {
         return
       }
-      let { data, error, status } = await supabase
+      const { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url, shows`)
+        .select('username, website, avatar_url, shows')
         .eq('id', user?.id)
         .single()
 
@@ -75,7 +75,7 @@ const ShowDetails = () => {
   }
 
   return (
-    <div className={`contentContainer pushFromTop`}>
+    <div className={'contentContainer pushFromTop'}>
       <h2>{showname}</h2>
       <p>{description}</p>
       {!owners ? <></> : <button onClick={event => handleClick(event)}>Create a set</button>}
