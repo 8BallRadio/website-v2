@@ -1,5 +1,10 @@
+# dependencies
 node_modules
+
+# production
 dist
-.env
-# Local Netlify folder
 .netlify
+
+# misc
+.env
+.DS_Store
