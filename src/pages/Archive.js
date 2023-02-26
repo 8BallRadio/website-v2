@@ -1,14 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import "../styles.css";
+import '../styles.css'
 
 const Archive = () => {
-
-    return (
-        <div className={`contentContainer pushFromTop`}>
-            <h2>Archive</h2>
-        </div>
-    )
+  return (
+    <div className={`contentContainer pushFromTop`}>
+      <h2>Archive</h2>
+    </div>
+  )
 }
 
-export default Archive;
+export default Archive
