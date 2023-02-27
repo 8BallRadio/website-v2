@@ -135,13 +135,13 @@ footer {
 elsewhere on mobile. */
 .live-data {
   display: none;
-  margin-right: 16px;
 }
 
 .navbar {
   display: flex;
   justify-content: space-around;
   column-gap: 16px;
+  margin-left: 16px;
   margin-right: 56px;
 }
 
@@ -220,7 +220,7 @@ elsewhere on mobile. */
 
   .live-data {
     display: block;
-  }  
+  }
 
   .shows-grid {
     grid-template-columns: 1fr 1fr 1fr;
