@@ -14,7 +14,7 @@ const FOOTER_LINK_DATA = [
   makeFooterLinkData('community', 'http://8balltv.club/'),
   makeFooterLinkData('zines', 'http://8balltv.club/'),
   makeFooterLinkData('TV', 'http://8balltv.club/'),
-  makeFooterLinkData('merch', 'http://8balltv.club/'),
+  makeFooterLinkData('merch', 'https://8ballcommunity.bigcartel.com/'),
   makeFooterLinkData('volunteer', 'http://8balltv.club/'),
 ]
 
