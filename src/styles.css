@@ -4,6 +4,15 @@
   font-family: 'Inter', sans-serif;
 }
 
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -200,15 +209,16 @@ footer {
   font-size: 16px;
 }
 
-.showCard h3 {
-  text-align: center;
-}
-
-html,
-body {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-  font-size: 16px;
+.show-tag {
+  background: pink;
+  border: 1px solid black;
+  border-radius: 8px;
+  float: left;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 300;
+  text-transform: lowercase;
+  padding: 8px;
+  margin-top: 8px;
+  margin-right: 8px;
 }
