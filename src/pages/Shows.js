@@ -31,13 +31,14 @@ const Shows = () => {
     <div>
       {fetchError && <p>{fetchError}</p>}
       {shows && (
-        <div className="showsContainer">
-          <div className="showsGrid">
+        <>
+          <div className="content-header">shows</div>
+          <div className="shows-grid">
             {shows.map(show => (
               <ShowCard key={show.id} show={show} />
             ))}
           </div>
-        </div>
+        </>
       )}
     </div>
   )

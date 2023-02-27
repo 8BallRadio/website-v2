@@ -46,8 +46,6 @@ header a {
   text-decoration: none;
 }
 
-/* Footer */
-
 footer {
   display: flex;
   width: 100%;
@@ -164,15 +162,18 @@ footer {
   margin-left: 16px;
 }
 
-.showsContainer {
-  margin: 0 auto;
+.content-header {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 64px;
+  margin-bottom: 64px;
 }
 
-.showsGrid {
-  margin-top: 40px;
+.shows-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  gap: 48px;
 }
 
 .show-card {
@@ -187,8 +188,6 @@ footer {
   display: flex;
   flex-direction: column;
 }
-
-.show-image {}
 
 .show-date {
   margin-top: 8px;
