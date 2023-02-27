@@ -4,6 +4,11 @@
   font-family: 'Inter', sans-serif;
 }
 
+a {
+  color: black;
+  text-decoration: none; /* no underline */
+}
+
 html,
 body {
   margin: 0px;
