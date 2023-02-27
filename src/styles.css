@@ -133,6 +133,7 @@ footer {
 elsewhere on mobile. */
 .live-data {
   display: none;
+  font-size: 16px
 }
 
 .navbar {
@@ -141,6 +142,10 @@ elsewhere on mobile. */
   justify-content: space-around;
   margin-left: 16px;
   margin-right: 56px;
+}
+
+.nav-link {
+  font-size: 16px;
 }
 
 .shows-grid {
