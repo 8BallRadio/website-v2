@@ -5,7 +5,7 @@ import '../styles.css'
 const Schedule = () => {
   return (
     <div>
-      <h2>Schedule</h2>
+      <div className="content-header">Schedule</div>
     </div>
   )
 }

@@ -62,8 +62,8 @@ const Login = () => {
   // }
 
   return (
-    <div className={'pushFromTop authContainer'}>
-      <h2> Login </h2>
+    <div>
+      <div className="content-header">Login</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="input-email">Email</label>
         <br />
@@ -79,7 +79,9 @@ const Login = () => {
         <br />
         <br />
 
-        <button type="submit">Login</button>
+        <button type="submit" className="auth-button">
+          Login
+        </button>
       </form>
       <p>Password Recovery [TODO]</p>
       {/* {sendingOtp
