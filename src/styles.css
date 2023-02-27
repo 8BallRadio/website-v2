@@ -140,7 +140,7 @@ footer {
   display: flex;
   justify-content: space-around;
   column-gap: 16px;
-  margin-right: 32px;
+  margin-right: 56px;
 }
 
 .audio-player {
