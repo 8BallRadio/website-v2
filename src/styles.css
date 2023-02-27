@@ -15,7 +15,7 @@ body {
   padding: 0px;
   width: 100%;
   height: 100%;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 img {
@@ -36,6 +36,7 @@ header {
   height: 64px;
   justify-content: space-between;
   left: 0;
+  height: 80px;
   padding: 0 1rem;
   position: fixed;
   top: 0;
@@ -55,6 +56,7 @@ footer {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 144px;
 }
 
 .audio-player {
@@ -72,7 +74,6 @@ footer {
   border-radius: 8px;
   color: white;
   display: inline-block;
-  font-size: 16px;
   padding: 8px 32px;
   text-align: center;
   text-decoration: none;
@@ -105,7 +106,8 @@ footer {
 
 .footer-column-left {
   display: none;
-  margin-left: 64px;
+  /* TODO: the padding on the left of the image asset should be removed. */
+  margin-left: calc(64px - 8px); 
   margin-right: 64px;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -133,7 +135,6 @@ footer {
 elsewhere on mobile. */
 .live-data {
   display: none;
-  font-size: 16px
 }
 
 .navbar {
@@ -145,7 +146,6 @@ elsewhere on mobile. */
 }
 
 .nav-link {
-  font-size: 16px;
 }
 
 .shows-grid {
@@ -168,7 +168,6 @@ elsewhere on mobile. */
 }
 
 .show-date {
-  font-size: 12px;
   font-weight: 400;
   margin-top: 8px;
 }
@@ -179,7 +178,6 @@ elsewhere on mobile. */
 
 .show-title {
   font-weight: bold;
-  font-size: 16px;
   font-style: italic;
   margin-top: 8px;
   text-decoration: none;
@@ -187,7 +185,6 @@ elsewhere on mobile. */
 }
 
 .show-description {
-  font-size: 16px;
   font-weight: 300;
   margin-top: 16px;
 }
@@ -197,7 +194,7 @@ elsewhere on mobile. */
   border: 1px solid black;
   border-radius: 8px;
   float: left;
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
   font-weight: 300;
   margin-top: 8px;
