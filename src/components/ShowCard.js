@@ -5,7 +5,7 @@ import '../styles.css'
 const MOCK_TAGS = ['grime', 'dubstep', 'techno', 'electro', 'ambient']
 
 const ShowCard = ({ show }) => {
-  const tags = MOCK_TAGS.map((tag, index) => (
+  const tags = MOCK_TAGS.sort().map((tag, index) => (
     <div className="show-tag" key={index}>
       {tag}
     </div>
