@@ -26,14 +26,14 @@ const Footer = () => {
   ))
   return (
     <footer>
-      <div className="footer-column-end">
+      <div className="footer-column-left">
         <img src={Logo} />
       </div>
       <div className="footer-column-center">
         Voted listeners’ Choice Best Online Radio Station in North America - Mixcloud Online Radio
         Awards 2018.
       </div>
-      <div className="footer-column-end">{footerLinkContent}</div>
+      <div className="footer-column-right">{footerLinkContent}</div>
     </footer>
   )
 }
