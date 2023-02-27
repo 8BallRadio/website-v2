@@ -137,9 +137,10 @@ footer {
 }
 
 .navbar {
-  width: 30%;
   display: flex;
   justify-content: space-around;
+  column-gap: 16px;
+  margin-right: 32px;
 }
 
 .audio-player {
