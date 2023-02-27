@@ -29,10 +29,10 @@ const Shows = () => {
 
   return (
     <div>
+      <div className="content-header">shows</div>
       {fetchError && <p>{fetchError}</p>}
       {shows && (
         <>
-          <div className="content-header">shows</div>
           <div className="shows-grid">
             {shows.map(show => (
               <ShowCard key={show.id} show={show} />
