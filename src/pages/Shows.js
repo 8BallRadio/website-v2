@@ -29,7 +29,6 @@ const Shows = () => {
 
   return (
     <div className={'contentContainer pushFromTop'}>
-      <h2>Shows </h2>
       {fetchError && <p>{fetchError}</p>}
       {shows && (
         <div className="showsContainer">
