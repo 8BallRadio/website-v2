@@ -162,15 +162,14 @@ footer {
   gap: 40px;
 }
 
-.showCard {
+.show-card {
   width: 100%;
   padding: 10px;
   gap: 1rem;
-  background: #fff;
   box-sizing: border-box;
   border-radius: 6px;
   position: relative;
-  border-color: black;
+  border: 1px solid black;
 }
 
 .showCard h3 {

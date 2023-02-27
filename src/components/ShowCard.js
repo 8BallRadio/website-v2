@@ -6,7 +6,7 @@ import '../styles.css'
 
 const ShowCard = ({ show }) => {
   return (
-    <div className="showCard">
+    <div className="show-card">
       <Link to={show.key} relative="path">
         <h3>{show.showname}</h3>
       </Link>
