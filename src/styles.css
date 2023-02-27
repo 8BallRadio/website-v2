@@ -172,16 +172,28 @@ footer {
   text-decoration: none;
 }
 
+.show-image {
+  
+}
+
+.show-date {
+  font-weight: 400;
+  font-size: 12px;
+}
+
 .show-title {
+  margin-top: 8px;
   text-transform: uppercase;
-  font-style: italic;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
+  font-style: italic;
 }
 
 .show-description {
   margin-top: 16px;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .showCard h3 {
