@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
-  font-family: 'Didact Gothic', sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+.main-content {
+  padding: 56px;
 }
 
 /* Header */
@@ -78,11 +82,6 @@ footer {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-.contentContainer {
-  width: 100%;
-  height: 100vh;
 }
 
 .mainContentContainer {
@@ -170,16 +169,23 @@ footer {
   border-radius: 6px;
   position: relative;
   border: 1px solid black;
+  text-decoration: none;
+}
+
+.show-title {
+  text-transform: uppercase;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.show-description {
+  margin-top: 16px;
 }
 
 .showCard h3 {
   text-align: center;
-}
-
-.pushFromTop {
-  margin-top: 64px;
-  width: 100%;
-  height: 100vh;
 }
 
 html,

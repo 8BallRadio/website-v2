@@ -4,7 +4,7 @@ import '../styles.css'
 
 const Homepage = () => {
   return (
-    <div className={'pushFromTop authContainer'}>
+    <div>
       <h2>Homepage</h2>
     </div>
   )

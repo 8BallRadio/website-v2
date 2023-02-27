@@ -27,8 +27,9 @@ const App = () => {
   return (
     <>
       <Header />
-      {/* Main App */}
-      <Router />
+      <div className="main-content">
+        <Router />
+      </div>
       <Footer />
     </>
   )

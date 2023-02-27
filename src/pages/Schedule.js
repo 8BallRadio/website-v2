@@ -4,7 +4,7 @@ import '../styles.css'
 
 const Schedule = () => {
   return (
-    <div className={'contentcontainer pushFromTop'}>
+    <div>
       <h2>Schedule</h2>
     </div>
   )

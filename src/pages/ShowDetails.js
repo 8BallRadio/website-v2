@@ -75,7 +75,7 @@ const ShowDetails = () => {
   }
 
   return (
-    <div className={'contentContainer pushFromTop'}>
+    <div>
       <h2>{showname}</h2>
       <p>{description}</p>
       {!owners ? <></> : <button onClick={event => handleClick(event)}>Create a set</button>}
