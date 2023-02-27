@@ -24,7 +24,7 @@ img {
 }
 
 .main-content {
-  padding: 56px;
+  padding: 80px;
 }
 
 header {
@@ -33,7 +33,6 @@ header {
   border-bottom: 1px solid black;
   color: black;
   display: flex;
-  height: 64px;
   justify-content: space-between;
   left: 0;
   height: 80px;

@@ -21,6 +21,7 @@ const Shows = () => {
       } else {
         setShows(data)
         setFetchError(null)
+        console.log('data: ', data)
       }
     }
 
