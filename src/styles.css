@@ -131,6 +131,13 @@ footer {
   text-align: center;
 }
 
+/* TODO: this is a temporary workaround for visual easy. Perhaps we want to display live data
+elsewhere on mobile. */
+.live-data {
+  display: none;
+  margin-right: 16px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -210,6 +217,10 @@ footer {
   .footer-column-center {
     display: block;
   }
+
+  .live-data {
+    display: block;
+  }  
 
   .shows-grid {
     grid-template-columns: 1fr 1fr 1fr;

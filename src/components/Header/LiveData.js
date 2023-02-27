@@ -10,7 +10,7 @@ const LiveData = () => {
   const { data, status } = useQuery('currentShow', fetchAirtimeInfo)
 
   return (
-    <div className="live-dat">
+    <div className="live-data">
       {status === 'error' && <p>Error fetching data</p>}
       {status === 'loading' && <p>Fetching data...</p>}
       {status === 'success' && (
