@@ -15,7 +15,7 @@ const LiveData = () => {
       {status === 'loading' && <p>Fetching data...</p>}
       {status === 'success' && (
         <div>
-          {data.currentShow[0].name} -{data.current.name}
+          {data.currentShow[0].name} {data.current.name}
         </div>
       )}
     </div>
