@@ -4,6 +4,11 @@
   font-family: 'Inter', sans-serif;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 .main-content {
   padding: 56px;
 }
@@ -172,11 +177,10 @@ footer {
   text-decoration: none;
 }
 
-.show-image {
-  
-}
+.show-image {}
 
 .show-date {
+  margin-top: 8px;
   font-weight: 400;
   font-size: 12px;
 }
