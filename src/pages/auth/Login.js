@@ -75,11 +75,11 @@ const Login = () => {
         <input id="input-password" type="password" ref={passwordRef} />
         <br />
         <br />
+        <div className="forgot-password">Forgot password</div>
         <button type="submit" className="auth-button">
           Login
         </button>
       </form>
-      <p>Password Recovery [TODO]</p>
       {/* {sendingOtp
                 ? <p>Sending Magic Link to account if it exists</p>
                 : <form onSubmit={handleSubmitOtp}>
