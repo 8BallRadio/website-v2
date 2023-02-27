@@ -232,10 +232,6 @@ footer {
   .footer-link {
     text-align: right;
   }
-
-  .shows-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media only screen and (min-width: 760px) {
