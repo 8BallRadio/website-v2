@@ -27,10 +27,12 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="main-content">
-        <Router />
+      <div className="content-wrapper">
+        <div className="main-content">
+          <Router />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }
