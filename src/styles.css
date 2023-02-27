@@ -99,6 +99,7 @@ footer {
 .footer-column-center {
   align-items: center;
   display: none;
+  flex-grow: 1;
   text-align: center;
 }
 
