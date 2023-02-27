@@ -184,6 +184,8 @@ footer {
   position: relative;
   border: 1px solid black;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .show-image {}
@@ -213,7 +215,6 @@ footer {
   background: pink;
   border: 1px solid black;
   border-radius: 8px;
-  float: left;
   font-size: 12px;
   font-style: italic;
   font-weight: 300;
@@ -221,4 +222,9 @@ footer {
   padding: 8px;
   margin-top: 8px;
   margin-right: 8px;
+  float: left;
+}
+
+.show-tags-container {
+  margin-top: auto;
 }
