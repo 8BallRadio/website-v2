@@ -68,17 +68,13 @@ const Login = () => {
         <label htmlFor="input-email">Email</label>
         <br />
         <input id="input-email" type="email" ref={emailRef} />
-
         <br />
         <br />
-
         <label htmlFor="input-password">Password</label>
         <br />
         <input id="input-password" type="password" ref={passwordRef} />
-
         <br />
         <br />
-
         <button type="submit" className="auth-button">
           Login
         </button>

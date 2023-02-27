@@ -4,9 +4,9 @@ import '../styles.css'
 
 const Homepage = () => {
   return (
-    <div>
-      <h2>Homepage</h2>
-    </div>
+    <>
+      <div className="content-header">Homepage</div>
+    </>
   )
 }
 
