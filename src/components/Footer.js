@@ -1,43 +1,23 @@
 import React from 'react'
 
+import Logo from '../assets/logo.png'
+
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-column">
-        <h3>8 Ball Radio</h3>
-        <p>
-          Voted listeners’ Choice Best Online Radio Station in North America - Mixcloud Online Radio
-          Awards 2018.
-          <br />
-          <br />© 2018 8 BALL COMMUNITY All rights reserved.
-        </p>
+      <div className="footer-column-end">
+        <img src={Logo} />
       </div>
-      <div className="footer-column">
-        <h3>CONTACT</h3>
-        <p>
-          General Inquiries + Show submissions:
-          <br />
-          Drop us a line HERE
-          <br />
-          <br />
-          Visit Us:
-          <br />
-          <br />
-          327 Canal St.
-          <br />
-          <br />
-          New York, NY
-          <br />
-          <br />
-          Noon to 6pm - Everyday
-        </p>
+      <div className="footer-column-center">
+        Voted listeners’ Choice Best Online Radio Station in North America - Mixcloud Online Radio
+        Awards 2018.
       </div>
-      <div className="footer-column">
-        <h3>8 BALL FAMILY</h3>
-        8 BALL TV
-        <br />
-        <br />
-        MERCH (SUPPORT US)
+      <div className="footer-column-end">
+        <div className="footer-link">community</div>
+        <div className="footer-link">zines</div>
+        <div className="footer-link">TV</div>
+        <div className="footer-link">merch</div>
+        <div className="footer-link">volunteer</div>
       </div>
     </footer>
   )
