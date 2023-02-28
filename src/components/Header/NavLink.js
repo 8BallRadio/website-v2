@@ -1,12 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-const NavLink = (props) => {
-
-    return(
-        <Link to={props.to}> {props.children} </Link>
-    )
+const NavLink = props => {
+  return <Link to={props.to}> {props.children} </Link>
 }
 
-export default NavLink;
+export default NavLink

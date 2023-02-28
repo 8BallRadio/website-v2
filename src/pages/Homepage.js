@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import '../styles.css';
+import '../styles.css'
 
 const Homepage = () => {
-    return (
-        <div className={`pushFromTop authContainer`}>
-            <h2>Homepage</h2>
-        </div>
-    )
+  return (
+    <div className={`pushFromTop authContainer`}>
+      <h2>Homepage</h2>
+    </div>
+  )
 }
 
-export default Homepage;
+export default Homepage

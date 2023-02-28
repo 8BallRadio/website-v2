@@ -1,14 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import '../styles.css';
+import '../styles.css'
 
 const Schedule = () => {
-
-    return(
-        <div className={`contentcontainer pushFromTop`}>
-            <h2>Schedule</h2>
-        </div>
-    )
+  return (
+    <div className={`contentcontainer pushFromTop`}>
+      <h2>Schedule</h2>
+    </div>
+  )
 }
 
-export default Schedule;
+export default Schedule
