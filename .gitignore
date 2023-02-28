@@ -1,6 +1,11 @@
+# dependencies
 node_modules
+
+# production
 dist
-.env
-# Local Netlify folder
 .netlify
+
+# misc
+.env
 .eslintcache
+.DS_Store
