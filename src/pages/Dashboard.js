@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
   const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarURL] = useState(null)
+  const [avatarUrl, setAvatarURL] = useState(null)
   const [shows, setShows] = useState([])
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const Dashboard = () => {
       if (user == null) {
         return
       }
-      let { data, error, status } = await supabase
+      const { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url, shows`)
+        .select('username, website, avatar_url, shows')
         .eq('id', user?.id)
         .single()
 
@@ -60,11 +60,11 @@ const Dashboard = () => {
         id: user?.id,
         username,
         website,
-        avatar_url,
+        avatarUrl,
         updated_at: new Date(),
       }
 
-      let { data, error, status } = await supabase.from('profiles').upsert(updates)
+      const { data, error } = await supabase.from('profiles').upsert(updates)
       console.log(data)
       console.log(error)
       if (error) {
@@ -91,7 +91,7 @@ const Dashboard = () => {
   // Set shows,
 
   return (
-    <div className={`pushFromTop authContainer`}>
+    <div className={'pushFromTop authContainer'}>
       <h2>Welcome {user?.email}!</h2>
       <form onSubmit={updateProfile} className="form-widget" method="post">
         <div>
@@ -114,7 +114,7 @@ const Dashboard = () => {
             onChange={e => setWebsite(e.target.value)}
           />
         </div>
-        {shows?.length == 0 ? (
+        {shows?.length === 0 ? (
           <div> You're currently have 0 shows </div>
         ) : (
           <div> You're currently a part of {shows && shows?.length} shows</div>

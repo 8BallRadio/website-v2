@@ -15,7 +15,7 @@ const CreateShow = () => {
   const [userFields, setUserFields] = useState([{ user: '' }])
   const [currentUserDetails, setCurrentUserDetails] = useState(null)
   const [siteUsers, setSiteUsers] = useState(null)
-  const [formError, setFormError] = useState('')
+  const [setFormError] = useState('')
 
   // Check current user's id to find username
   const { user } = useAuth()
@@ -36,12 +36,12 @@ const CreateShow = () => {
     } else {
       setSiteUsers(
         data.filter(function (el) {
-          return el.id != user.id
+          return el.id !== user.id
         }),
       )
       setCurrentUserDetails(
         data.filter(function (el) {
-          return el.id == user.id
+          return el.id === user.id
         }),
       )
     }
@@ -60,10 +60,10 @@ const CreateShow = () => {
     const formattedUsers = formatUserArray()
     const key = formatUserRouteURL(showname)
     const { error } = await supabase.from('shows').insert({
-      showname: showname,
-      description: description,
+      showname,
+      description,
       users: formattedUsers,
-      key: key,
+      key,
     })
 
     if (error) {
@@ -76,20 +76,20 @@ const CreateShow = () => {
   }
 
   const handleUserFormChange = (index, event) => {
-    let data = [...userFields]
+    const data = [...userFields]
     data[index][event.target.name] = event.target.value
     setUserFields(data)
   }
 
   const addUserField = event => {
     event.preventDefault()
-    let newfield = { user: '' }
+    const newfield = { user: '' }
     setUserFields([...userFields, newfield])
   }
 
   const removeUserField = (index, event) => {
     event.preventDefault()
-    let data = [...userFields]
+    const data = [...userFields]
     data.splice(index, 1)
     setUserFields(data)
   }
@@ -98,7 +98,7 @@ const CreateShow = () => {
     // IN: Array of objects {user: ''}
     // OUT: Array of strings
 
-    let data = userFields.map(({ user }) => user)
+    const data = userFields.map(({ user }) => user)
     data.push(currentUserDetails.username)
     return data
   }
@@ -115,20 +115,20 @@ const CreateShow = () => {
       .toLowerCase()
   }
 
-  const validateFormFields = () => {
-    // TODO: Validate form fields to remove invalid form data
-    // Name of Show can only be letters, numbers, and select symbols
-    // Or it could be anything? and then we format the showname accordingly on submission?
-  }
+  // const validateFormFields = () => {
+  // TODO: Validate form fields to remove invalid form data
+  // Name of Show can only be letters, numbers, and select symbols
+  // Or it could be anything? and then we format the showname accordingly on submission?
+  // }
 
-  const removeCurrentUser = data => {
-    return data.filter(function (el) {
-      return el.id != user
-    })
-  }
+  // const removeCurrentUser = data => {
+  //   return data.filter(function (el) {
+  //     return el.id !== user
+  //   })
+  // }
 
   return (
-    <div className={`pushFromTop createContainer`}>
+    <div className={'pushFromTop createContainer'}>
       <form onSubmit={handleCreateShow}>
         <h2>Create a Show</h2>
         <div>

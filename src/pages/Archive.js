@@ -4,7 +4,7 @@ import '../styles.css'
 
 const Archive = () => {
   return (
-    <div className={`contentContainer pushFromTop`}>
+    <div className={'contentContainer pushFromTop'}>
       <h2>Archive</h2>
     </div>
   )

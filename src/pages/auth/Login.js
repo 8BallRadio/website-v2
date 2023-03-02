@@ -1,21 +1,20 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../../contexts/Auth'
-import supabase from '../../config/supabaseClient'
 
 import '../../styles.css'
 
 const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const otpEmailRef = useRef()
+  // const otpEmailRef = useRef()
 
-  const [sendingOtp, setSendingOtp] = useState(false)
+  // const [sendingOtp, setSendingOtp] = useState(false)
 
   // Get signUp function from the auth context
-  const { user, signIn, signInWithOtp } = useAuth()
+  const { signIn } = useAuth()
 
   const history = useNavigate()
 
@@ -63,7 +62,7 @@ const Login = () => {
   // }
 
   return (
-    <div className={`pushFromTop authContainer`}>
+    <div className={'pushFromTop authContainer'}>
       <h2> Login </h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="input-email">Email</label>
@@ -83,7 +82,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       <p>Password Recovery [TODO]</p>
-      {/* {sendingOtp 
+      {/* {sendingOtp
                 ? <p>Sending Magic Link to account if it exists</p>
                 : <form onSubmit={handleSubmitOtp}>
                     <label htmlFor="input-otp-email">Email</label>

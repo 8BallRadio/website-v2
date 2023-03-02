@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import LiveData from './LiveData'
 
 import pauseSVG from '../../assets/pause-fill.svg'

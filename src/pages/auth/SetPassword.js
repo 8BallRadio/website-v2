@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../../contexts/Auth'
 
@@ -24,7 +24,7 @@ const SetPassword = () => {
     // const name = nameRef.current.value;
 
     // Calls `update` function from the context
-    const { data, error } = await signUp({ email, password })
+    const { error } = await signUp({ email, password })
 
     if (error) {
       alert('error signing in')
@@ -38,7 +38,7 @@ const SetPassword = () => {
 
   return (
     <div className="contentContainer">
-      <div className={`pushFromTop authContainer`}>
+      <div className={'pushFromTop authContainer'}>
         <h2>Set Your Password</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="input-email">Email: {user?.email} </label>
