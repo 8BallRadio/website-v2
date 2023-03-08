@@ -9,14 +9,10 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      {user ? (
-        <NavLink to="/dashboard"> Dashboard </NavLink>
-      ) : (
-        <NavLink to="/login"> Login </NavLink>
-      )}
-      <NavLink to="shows"> Shows </NavLink>
-      <NavLink to="archive"> Archive </NavLink>
-      <NavLink to="schedule"> Schedule </NavLink>
+      <NavLink to="shows">Shows</NavLink>
+      <NavLink to="archive">Archive</NavLink>
+      <NavLink to="schedule">Schedule</NavLink>
+      {user ? <NavLink to="/dashboard">Dashboard</NavLink> : <NavLink to="/login">Login</NavLink>}
     </div>
   )
 }

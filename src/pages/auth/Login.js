@@ -62,26 +62,24 @@ const Login = () => {
   // }
 
   return (
-    <div className={'pushFromTop authContainer'}>
-      <h2> Login </h2>
+    <div>
+      <div className="content-header">Login</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="input-email">Email</label>
         <br />
         <input id="input-email" type="email" ref={emailRef} />
-
         <br />
         <br />
-
         <label htmlFor="input-password">Password</label>
         <br />
         <input id="input-password" type="password" ref={passwordRef} />
-
         <br />
         <br />
-
-        <button type="submit">Login</button>
+        <div className="forgot-password">Forgot password</div>
+        <button type="submit" className="auth-button">
+          Login
+        </button>
       </form>
-      <p>Password Recovery [TODO]</p>
       {/* {sendingOtp
                 ? <p>Sending Magic Link to account if it exists</p>
                 : <form onSubmit={handleSubmitOtp}>

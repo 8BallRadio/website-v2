@@ -27,9 +27,12 @@ const App = () => {
   return (
     <>
       <Header />
-      {/* Main App */}
-      <Router />
-      <Footer />
+      <div className="content-wrapper">
+        <div className="main-content">
+          <Router />
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }

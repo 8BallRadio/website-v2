@@ -20,7 +20,7 @@ const ShowDetails = () => {
   const [showname, setShowname] = useState('')
   const [description, setDescription] = useState('')
   const [owners, setOwners] = useState(null)
-  const [setLoading] = useState(true)
+  // const [setLoading] = useState(true)
 
   useEffect(() => {
     fetchShowDetails()
@@ -45,7 +45,7 @@ const ShowDetails = () => {
 
   const verifyUser = async () => {
     try {
-      setLoading(true)
+      // setLoading(true)
 
       if (user == null) {
         return
@@ -66,7 +66,7 @@ const ShowDetails = () => {
     } catch (error) {
       alert(error.message)
     } finally {
-      setLoading(false)
+      // setLoading(false)
     }
   }
 
@@ -75,8 +75,8 @@ const ShowDetails = () => {
   }
 
   return (
-    <div className={'contentContainer pushFromTop'}>
-      <h2>{showname}</h2>
+    <div>
+      <div className="content-header">{showname}</div>
       <p>{description}</p>
       {!owners ? <></> : <button onClick={event => handleClick(event)}>Create a set</button>}
     </div>

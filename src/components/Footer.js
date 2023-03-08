@@ -1,44 +1,39 @@
 import React from 'react'
 
+import Logo from '../assets/logo.png'
+
+const makeFooterLinkData = (title, link) => {
+  return {
+    title,
+    link,
+  }
+}
+
+// TODO: these links should be updated.
+const FOOTER_LINK_DATA = [
+  makeFooterLinkData('community', 'http://8balltv.club/'),
+  makeFooterLinkData('zines', 'http://8balltv.club/'),
+  makeFooterLinkData('TV', 'http://8balltv.club/'),
+  makeFooterLinkData('merch', 'https://8ballcommunity.bigcartel.com/'),
+  makeFooterLinkData('volunteer', 'http://8balltv.club/'),
+]
+
 const Footer = () => {
+  const footerLinkContent = FOOTER_LINK_DATA.map((data, index) => (
+    <div className="footer-link" key={index}>
+      <a href={data.link}>{data.title}</a>
+    </div>
+  ))
   return (
     <footer>
-      <div className="footer-column">
-        <h3>8 Ball Radio</h3>
-        <p>
-          Voted listeners’ Choice Best Online Radio Station in North America - Mixcloud Online Radio
-          Awards 2018.
-          <br />
-          <br />© 2018 8 BALL COMMUNITY All rights reserved.
-        </p>
+      <div className="footer-column-left">
+        <img src={Logo} />
       </div>
-      <div className="footer-column">
-        <h3>CONTACT</h3>
-        <p>
-          General Inquiries + Show submissions:
-          <br />
-          Drop us a line HERE
-          <br />
-          <br />
-          Visit Us:
-          <br />
-          <br />
-          327 Canal St.
-          <br />
-          <br />
-          New York, NY
-          <br />
-          <br />
-          Noon to 6pm - Everyday
-        </p>
+      <div className="footer-column-center">
+        Voted listeners’ Choice Best Online Radio Station in North America - Mixcloud Online Radio
+        Awards 2018.
       </div>
-      <div className="footer-column">
-        <h3>8 BALL FAMILY</h3>
-        8 BALL TV
-        <br />
-        <br />
-        MERCH (SUPPORT US)
-      </div>
+      <div className="footer-column-right">{footerLinkContent}</div>
     </footer>
   )
 }

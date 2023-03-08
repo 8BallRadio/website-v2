@@ -1,160 +1,252 @@
-/* Header */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-header {
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    padding: 0 1rem;
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    height: 64px;
-    z-index: 1;
+* {
+  font-family: 'Inter', sans-serif;
 }
 
-header a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Footer */
-
-footer {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 100%;
-    background-color: darkslategrey;
-    gap: 1rem;
-    height: 300px;
-}
-
-footer div {
-    width: 25%;
-    background-color: darkslategray;
-}
-
-.formButton {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
-
-.contentContainer {
-    width: 100%;
-    height: 100vh;
-}
-
-.mainContentContainer {
-    position: relative;
-    top: 64px;
-    left: 0;
-    padding-bottom: 4rem;
-}
-
-
-/* Auth pages styling */
-.authContainer {
-    /* display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center; */
-    box-sizing: border-box;
-    padding: 0px 20px;
-    text-align: left;
-    border: 1px dotted black;
-}
-
-.authContainer button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.authContainer div {
-    padding: 10px;
-}
-
-/* Create page styling */
-.createContainer {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    text-align: left;
-    border: 1px dotted black;
-    padding: 40px;
-    box-sizing: border-box;
-}
-
-.container {
-    position: relative;
-    min-height: 100vh;
-}
-
-.navbar {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.audioPlayer{
-    width: 43%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.showsContainer{
-    margin: 0 auto;
-}
-
-.showsGrid {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-}
-
-.showCard {
-    width: 100%;
-    padding: 10px;
-    gap: 1rem;
-    background: #fff;
-    box-sizing: border-box;
-    border-radius: 6px;
-    position: relative;
-    border-color: black;
-  }
-
-  .showCard h3 {
-    text-align: center;
-  }
-
-.pushFromTop{
-    margin-top: 64px;
-    width: 100%;
-    height: 100vh;
+a {
+  color: black;
+  text-decoration: none;
 }
 
 html,
 body {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.main-content {
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 80px;
+}
+
+header {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid black;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  height: 64px;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+footer {
+  align-items: center;
+  background-color: white;
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.audio-player {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-evenly;
+  margin-left: 16px;
+}
+
+.auth-button {
+  /* green */
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.create-show-container {
+  border: 1px dotted black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  text-align: left;
+}
+
+.content-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  text-transform: uppercase;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.footer-column-center {
+  align-items: center;
+  display: none;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.footer-column-left {
+  display: none;
+  /* TODO: the padding on the left of the image asset should be removed. */
+  margin-left: calc(64px - 8px);
+  margin-right: 64px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.footer-column-left>img {
+  height: 112px;
+  width: 112px;
+}
+
+.footer-column-right {
+  margin-bottom: 24px;
+  margin-left: 64px;
+  margin-right: 64px;
+  margin-top: 24px;
+}
+
+.footer-link {
+  margin-bottom: 4px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.forgot-password {
+  color: gray;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* TODO: this is a temporary workaround for visual easy. Perhaps we want to display live data
+elsewhere on mobile. */
+.live-data {
+  display: none;
+}
+
+.navbar {
+  column-gap: 16px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 16px;
+  margin-right: 56px;
+}
+
+.nav-link {}
+
+.shows-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.show-card {
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 8px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
+.show-date {
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.show-image {
+  border-radius: 4px;
+}
+
+.show-title {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.show-description {
+  font-weight: 300;
+  margin-top: 16px;
+}
+
+.show-tag {
+  background: pink;
+  border: 1px solid black;
+  border-radius: 8px;
+  float: left;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-right: 8px;
+  text-transform: lowercase;
+  padding: 8px;
+}
+
+.show-tags-container {
+  margin-top: auto;
+}
+
+@media only screen and (min-width: 375px) {
+  .footer-column-left {
+    display: block;
+  }
+
+  .footer-link {
+    text-align: right;
+  }
+
+  .main-content {
+    padding-bottom: 48px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .footer-column-center {
+    display: block;
+  }
+
+  .live-data {
+    display: block;
+  }
+
+  .main-content {
+    padding-bottom: 56px;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  .shows-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
