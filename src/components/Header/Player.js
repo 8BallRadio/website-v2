@@ -28,8 +28,8 @@ const Player = ({ url }) => {
   }
 
   return (
-    <div className="audioPlayer">
-      <LiveData />
+    <div className="audio-player">
+      <button onClick={togglePlayPause}>{isPlaying ? <PauseButton /> : <PlayButton />}</button>
       <section>
         <input
           type="range"
@@ -42,7 +42,7 @@ const Player = ({ url }) => {
           }}
         />
       </section>
-      <button onClick={togglePlayPause}>{isPlaying ? <PauseButton /> : <PlayButton />}</button>
+      <LiveData />
     </div>
   )
 }

@@ -21,6 +21,7 @@ const Shows = () => {
       } else {
         setShows(data)
         setFetchError(null)
+        console.log('data: ', data)
       }
     }
 
@@ -28,17 +29,17 @@ const Shows = () => {
   }, [])
 
   return (
-    <div className={'contentContainer pushFromTop'}>
-      <h2>Shows </h2>
+    <div>
+      <div className="content-header">shows</div>
       {fetchError && <p>{fetchError}</p>}
       {shows && (
-        <div className="showsContainer">
-          <div className="showsGrid">
+        <>
+          <div className="shows-grid">
             {shows.map(show => (
               <ShowCard key={show.id} show={show} />
             ))}
           </div>
-        </div>
+        </>
       )}
     </div>
   )

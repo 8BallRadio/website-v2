@@ -128,7 +128,7 @@ const CreateShow = () => {
   // }
 
   return (
-    <div className={'pushFromTop createContainer'}>
+    <div className="create-show-container">
       <form onSubmit={handleCreateShow}>
         <h2>Create a Show</h2>
         <div>
