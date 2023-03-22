@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
-import Header from './components/Header/Header'
-import Footer from './components/Footer'
-import Router from './components/Router'
+import Header from '../browser/components/Header/Header'
+import Footer from '../browser/components/Footer'
+import Router from '../browser/components/Router'
 
-import { useAuth } from './contexts/Auth'
+import { useAuth } from '../browser/contexts/Auth'
 
 const App = () => {
   const location = useLocation()

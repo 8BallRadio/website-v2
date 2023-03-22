@@ -1,8 +1,12 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
-const nodeExternals = require('webpack-node-externals');
+const path = require('path')
+const webpack = require('webpack')
+const Dotenv = require('dotenv-webpack')
+const nodeExternals = require('webpack-node-externals')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+// Prior webpack config with necessary module
+
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 // module.exports = {
 //   entry: path.join(__dirname, 'src', 'main.js'),
 //   output: {
@@ -45,49 +49,69 @@ const nodeExternals = require('webpack-node-externals');
 // }
 
 const browserConfig = {
-  mode: "production",
-  entry: "./src/browser/index.js",
+  mode: 'production',
+  entry: './src/browser/main.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: "babel-loader" },
-      { test: /\.css$/, use: ["css-loader"] },
+      { test: /\.(js)$/, use: 'babel-loader' },
+      { test: /\.css$/, use: ['css-loader'] },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[hash].[ext]',
+        },
+      },
     ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      __isBrowser__: "true",
+      __isBrowser__: 'true',
+    }),
+    new Dotenv({
+      systemvars: true,
     }),
   ],
-};
+}
 
 const serverConfig = {
-  mode: "production",
-  entry: "./src/server/index.js",
-  target: "node",
+  mode: 'production',
+  entry: './src/server/index.js',
+  target: 'node',
   externals: [nodeExternals()],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "server.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'server.js',
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: "babel-loader" },
+      { test: /\.(js)$/, use: 'babel-loader' },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[hash].[ext]',
+        },
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new webpack.DefinePlugin({
-      __isBrowser__: "false",
+      __isBrowser__: 'false',
+    }),
+    new Dotenv({
+      systemvars: true,
     }),
   ],
-};
+}
 
-module.exports = [browserConfig, serverConfig];
+module.exports = [browserConfig, serverConfig]

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import LiveData from './LiveData'
 
-import pauseSVG from '../../assets/pause-fill.svg'
-import playSVG from '../../assets/play.svg'
+import pauseSVG from '../../../assets/pause-fill.svg'
+import playSVG from '../../../assets/play.svg'
 
 const Player = ({ url }) => {
   const [audio] = useState(new Audio(url))

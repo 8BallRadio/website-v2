@@ -23,6 +23,9 @@
     "url": "https://github.com/8BallRadio/website-v2/issues"
   },
   "homepage": "https://github.com/8BallRadio/website-v2#readme",
+  "babel": {
+    "presets": ["@babel/preset-react"]
+  },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
