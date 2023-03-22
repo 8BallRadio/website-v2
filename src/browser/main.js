@@ -8,7 +8,7 @@ import { AuthProvider } from './contexts/Auth'
 
 const queryClient = new QueryClient()
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')).hydrate(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
