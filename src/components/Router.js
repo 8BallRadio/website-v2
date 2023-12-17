@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom'
 
 import Archive from '../pages/Archive'
 import Schedule from '../pages/Schedule'
-import Login from '../pages/auth/Login'
 import SetPassword from '../pages/auth/SetPassword'
 import Dashboard from '../pages/Dashboard'
 import CreateShow from '../pages/CreateShow'
@@ -25,7 +24,6 @@ const Router = () => {
       <Route path="shows/:showKey" element={<ShowDetails />} />
       <Route path="archive" element={<Archive />} />
       <Route path="schedule" element={<Schedule />} />
-      {/* <Route path="login" element={<Login />} /> */}
       <Route
         path="dashboard"
         element={
