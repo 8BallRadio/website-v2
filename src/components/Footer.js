@@ -21,7 +21,9 @@ const FOOTER_LINK_DATA = [
 const Footer = () => {
   const footerLinkContent = FOOTER_LINK_DATA.map((data, index) => (
     <div className="footer-link" key={index}>
-      <a  target="_blank" href={data.link}>{data.title}</a>
+      <a rel="noreferrer" target="_blank" href={data.link}>
+        {data.title}
+      </a>
     </div>
   ))
   return (
