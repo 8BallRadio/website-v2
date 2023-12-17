@@ -12,7 +12,8 @@ const NavBar = () => {
       <NavLink to="shows">Shows</NavLink>
       <NavLink to="archive">Archive</NavLink>
       <NavLink to="schedule">Schedule</NavLink>
-      {user ? <NavLink to="/dashboard">Dashboard</NavLink> : <NavLink to="/login">Login</NavLink>}
+      {/* TODO: Login Functionality */}
+      {/* {user ? <NavLink to="/dashboard">Dashboard</NavLink> : <NavLink to="/login">Login</NavLink>} */}
     </div>
   )
 }

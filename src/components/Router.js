@@ -25,7 +25,7 @@ const Router = () => {
       <Route path="shows/:showKey" element={<ShowDetails />} />
       <Route path="archive" element={<Archive />} />
       <Route path="schedule" element={<Schedule />} />
-      <Route path="login" element={<Login />} />
+      {/* <Route path="login" element={<Login />} /> */}
       <Route
         path="dashboard"
         element={

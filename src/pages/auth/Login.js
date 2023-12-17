@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../contexts/Auth'
 
 import '../../styles.css'
+import Logo from '../../assets/logo.png'
 
 const Login = () => {
   const emailRef = useRef()
@@ -62,17 +63,59 @@ const Login = () => {
   // }
 
   return (
-    <div>
-      <div className="content-header">Login</div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="input-email">Email</label>
+    <div
+      style={{
+        position: 'absolute',
+        left: '50%',
+        top: '45%',
+        transform: 'translate(-50%, -50%)',
+      }}
+    >
+      {/* <div className="content-header">Login</div> */}
+
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      >
+        <img
+          src={Logo}
+          style={{
+            paddingBottom: '35px',
+          }}
+        />
+
+        {/* <label htmlFor="input-email">Email</label> */}
         <br />
-        <input id="input-email" type="email" ref={emailRef} />
+        <input
+          id="input-email"
+          type="email"
+          placeholder="enter email"
+          ref={emailRef}
+          style={{
+            boxShadow: '0px 0px 10px 3px rgb(0 0 0 / 0.2)',
+            border: '#f0f2f5',
+            borderRadius: '2px',
+          }}
+        />
         <br />
+        {/* <label htmlFor="input-password">Password</label> */}
         <br />
-        <label htmlFor="input-password">Password</label>
-        <br />
-        <input id="input-password" type="password" ref={passwordRef} />
+        <input
+          id="input-password"
+          type="password"
+          placeholder="password"
+          ref={passwordRef}
+          style={{
+            boxShadow: '0px 0px 10px 3px rgb(0 0 0 / 0.2)',
+            border: '#f0f2f5',
+            borderRadius: '2px',
+          }}
+        />
         <br />
         <br />
         <div className="forgot-password">Forgot password</div>
