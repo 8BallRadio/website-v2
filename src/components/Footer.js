@@ -11,11 +11,11 @@ const makeFooterLinkData = (title, link) => {
 
 // TODO: these links should be updated.
 const FOOTER_LINK_DATA = [
-  makeFooterLinkData('community', 'http://8balltv.club/'),
-  makeFooterLinkData('zines', 'http://8balltv.club/'),
+  makeFooterLinkData('community', 'https://8ballcommunity.club/'),
+  makeFooterLinkData('zines', 'https://8ball-library.club'),
   makeFooterLinkData('TV', 'http://8balltv.club/'),
   makeFooterLinkData('merch', 'https://8ballmarket.com/'),
-  makeFooterLinkData('volunteer', 'http://8balltv.club/'),
+  makeFooterLinkData('volunteer', 'https://8ballcommunity.club/VOLUNTEER-WITH-US'),
 ]
 
 const Footer = () => {
