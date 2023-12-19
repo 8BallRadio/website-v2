@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query'
 
 const LiveData = () => {
   const fetchAirtimeInfo = async () => {
@@ -7,7 +7,7 @@ const LiveData = () => {
     return res.json()
   }
 
-  const { data, status } = useQuery('currentShow', fetchAirtimeInfo)
+  const { data, status } = useQuery({ queryKey: ['currentShow'], queryFn: fetchAirtimeInfo })
 
   return (
     <div className="live-data">
